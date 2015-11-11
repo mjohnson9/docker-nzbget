@@ -1,7 +1,7 @@
 FROM phusion/baseimage:latest
 MAINTAINER Michael Johnson <michael@johnson.computer>
 
-RUN apt-get update \
+RUN add-apt-repository -y ppa:modriscoll/nzbget && apt-get update \
  && apt-get install -y nzbget && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
